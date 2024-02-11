@@ -1,0 +1,38 @@
+thread 'rustc' panicked at compiler\rustc_metadata\src\creader.rs:195:32:
+Failed to get crate data for crate15
+stack backtrace:
+   0:     0x7ff93f64c884 - std::backtrace::Backtrace::force_capture::ha316a8c59590db70
+   1:     0x7ff93f64c7e4 - std::backtrace::Backtrace::force_capture::ha316a8c59590db70
+   2:     0x7ff926429c7b - <tracing_subscriber[1a895b7d438f8c1d]::util::TryInitError as core[1a9ca60cf5f5707d]::fmt::Display>::fmt
+   3:     0x7ff93f666163 - std::panicking::rust_panic_with_hook::haa5b2a955d6e9910
+   4:     0x7ff93f666009 - <std::panicking::begin_panic_handler::StaticStrPayload as core::panic::PanicPayload>::take_box::h1fc7089d2c1f3293
+   5:     0x7ff93f663279 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::hc99197c9b2d6b3ef
+   6:     0x7ff93f665cd6 - rust_begin_unwind
+   7:     0x7ff93f6bb737 - core::panicking::panic_fmt::h3b76f05d3256bd9f
+   8:     0x7ff92516a3db - <rustc_metadata[2f9ed4c92abfca28]::creader::CStore as rustc_session[3bf59b46651f552d]::cstore::CrateStore>::stable_crate_id
+   9:     0x7ff9262656fd - <rustc_middle[9193cad70d79b3d1]::ty::visit::LateBoundRegionsCollector as rustc_type_ir[fbb395866ffc979a]::visit::TypeVisitor<rustc_middle[9193cad70d79b3d1]::ty::context::TyCtxt>>::visit_ty
+  10:     0x7ff9252a6b00 - <rustc_middle[9193cad70d79b3d1]::query::on_disk_cache::OnDiskCache>::serialize
+  11:     0x7ff9252d58a3 - <rustc_middle[9193cad70d79b3d1]::ty::context::TyCtxt>::serialize_query_result_cache
+  12:     0x7ff925112dda - rustc_incremental[f90b8bd0ccf92d0f]::persist::save::save_work_product_index
+  13:     0x7ff925116c73 - rustc_incremental[f90b8bd0ccf92d0f]::persist::save::save_work_product_index
+  14:     0x7ff92510ff77 - rustc_incremental[f90b8bd0ccf92d0f]::persist::load::setup_dep_graph
+  15:     0x7ff925119c52 - rustc_incremental[f90b8bd0ccf92d0f]::persist::save::save_work_product_index
+  16:     0x7ff9251105b0 - rustc_incremental[f90b8bd0ccf92d0f]::persist::load::setup_dep_graph
+  17:     0x7ff925119e0b - rustc_incremental[f90b8bd0ccf92d0f]::persist::save::save_work_product_index
+  18:     0x7ff92511175f - rustc_incremental[f90b8bd0ccf92d0f]::persist::save::save_dep_graph
+  19:     0x7ff9224601de - rustc_driver_impl[b32f8017ee93a888]::main
+  20:     0x7ff9224699d1 - rustc_driver_impl[b32f8017ee93a888]::main
+  21:     0x7ff92245c48d - rustc_driver_impl[b32f8017ee93a888]::main
+  22:     0x7ff92245def8 - rustc_driver_impl[b32f8017ee93a888]::main
+  23:     0x7ff92249b74f - rustc_driver_impl[b32f8017ee93a888]::main
+  24:     0x7ff92249a678 - rustc_driver_impl[b32f8017ee93a888]::main
+  25:     0x7ff93f676b1c - std::sys::pal::windows::thread::Thread::new::h12285e0320d9cc9c
+  26:     0x7ff9d256257d - BaseThreadInitThunk
+  27:     0x7ff9d420aa58 - RtlUserThreadStart
+
+
+rustc version: 1.78.0-nightly (6cc484351 2024-02-10)
+platform: x86_64-pc-windows-msvc
+
+query stack during panic:
+end of query stack
